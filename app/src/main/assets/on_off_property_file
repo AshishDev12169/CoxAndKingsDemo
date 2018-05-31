@@ -1,0 +1,5 @@
+{
+  "mainScreen": {
+    "flightStatus": true,"itinerary": true,"hotelBookingStatus": true,"flightBookingStatus": true,"emergencyContact": true
+  }
+}
