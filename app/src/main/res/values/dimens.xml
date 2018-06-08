@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="padding_16dp">16dp</dimen>
+    <dimen name="padding_8dp">8dp</dimen>
+
+    <dimen name="margin_8dp">8dp</dimen>
+
+
+    <dimen name="width">36dp</dimen>
+    <dimen name="height">36dp</dimen>
+
+    <dimen name="hotel_img_width">100dp</dimen>
+    <dimen name="hotel_img_height">100dp</dimen>
+
+
+
+</resources>

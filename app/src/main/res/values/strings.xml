@@ -17,4 +17,22 @@
 
     <string name="profile">Profile</string>
 
+
+    <string name="trip_trip_to">Trip To:\u0020</string>
+    <string name="company_name">CompanyName</string>
+
+
+    <string name="itinerary_provider">Jet Airways</string>
+    <string name="itinerary_flight_number">Flight: </string>
+    <string name="itinerary_date">Date</string>
+    <string name="itinerary_contact_person">Contact Person</string>
+
+    <string name="itinerary_view_details">View Details</string>
+
+
+    <string name="trip_trip_information">Trip Information</string>
+
+
+
+
 </resources>

@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="8dp"
+    android:elevation="4dp">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="vertical"
+        android:paddingBottom="@dimen/padding_16dp"
+        android:paddingLeft="@dimen/padding_8dp"
+        android:paddingRight="@dimen/padding_8dp"
+        android:paddingTop="@dimen/padding_16dp">
+
+        <!--Flight Information-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/imageViewTypeIcon"
+                android:layout_width="@dimen/width"
+                android:layout_height="@dimen/height"
+                android:src="@drawable/icon_hotel" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/txtViewProvider"
+                    style="@style/headerTextStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margin_8dp"
+                    android:layout_marginStart="@dimen/margin_8dp"
+                    android:text="@string/itinerary_provider" />
+
+                <TextView
+                    android:id="@+id/textViewFlightNumber"
+                    style="@style/headerTextStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margin_8dp"
+                    android:layout_marginStart="@dimen/margin_8dp"
+                    android:text="@string/itinerary_flight_number"
+                    android:visibility="gone"/>
+
+                <TextView
+                    android:id="@+id/textViewDate"
+                    style="@style/headerTextStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margin_8dp"
+                    android:layout_marginStart="@dimen/margin_8dp"
+                    android:text="@string/itinerary_date" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <!--Airport Information-->
+        <!--Source and destination Information-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_8dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/txtViewSourcePointCode"
+                    style="@style/TextStyleBold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="XXXXOMDO678" />
+
+                <TextView
+                    style="@style/TextStyle"
+                    android:id="@+id/txtViewSourcePointName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="XXXXASHISh" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="20dp"
+                    android:layout_gravity="center_vertical"
+                    android:src="@drawable/images" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_8dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/txtViewDestinationPointCode"
+                    style="@style/TextStyleBold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="XXXXOMDO678" />
+
+                <TextView
+                    android:id="@+id/txtViewDestinationPointName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="XXXXASHISh"
+                    style="@style/TextStyle"/>
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <!--View All Ticket Details-->
+        <include layout="@layout/include_view_detail_layout" />
+
+    </LinearLayout>
+
+</android.support.v7.widget.CardView>
