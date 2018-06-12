@@ -11,6 +11,7 @@ import android.widget.TextView;
 import com.example.ashish14060.coxandkingsdemo.R;
 import com.example.ashish14060.coxandkingsdemo.activity.ItineraryActivity;
 import com.example.ashish14060.coxandkingsdemo.manager.HttpManager;
+import com.example.ashish14060.coxandkingsdemo.manager.WebServiceManager;
 import com.example.ashish14060.coxandkingsdemo.util.Constants;
 import com.example.ashish14060.coxandkingsdemo.web_model.Itinerary;
 import com.example.ashish14060.coxandkingsdemo.web_model.Trip;
@@ -85,12 +86,14 @@ public class TripRecyclerViewAdapter extends RecyclerView.Adapter<TripRecyclerVi
         @Override
         public void onClick(View v)
         {
-            HttpManager.connect();
-//            Trip tag = (Trip) v.getTag();
-//            ArrayList<Itinerary> listOfItinerary= tag.getListOfItinerary();
-//            Intent intent = new Intent(activityContext, ItineraryActivity.class);
-//            intent.putParcelableArrayListExtra(Constants.INTENT_DATA_KEY, listOfItinerary);
-//            activityContext.startActivity(intent);
+//          HttpManager.connect();
+//
+//          WebServiceManager.getListOfUserTrip();
+            Trip tag = (Trip) v.getTag();
+            ArrayList<Itinerary> listOfItinerary= tag.getListOfItinerary();
+            Intent intent = new Intent(activityContext, ItineraryActivity.class);
+            intent.putParcelableArrayListExtra(Constants.INTENT_DATA_KEY, listOfItinerary);
+            activityContext.startActivity(intent);
         }
     }
 }

@@ -10,8 +10,10 @@ import android.widget.TextView;
 
 import com.example.ashish14060.coxandkingsdemo.R;
 import com.example.ashish14060.coxandkingsdemo.util.Constants;
+import com.example.ashish14060.coxandkingsdemo.util.Util;
 import com.example.ashish14060.coxandkingsdemo.web_model.Itinerary;
 
+import java.text.ParseException;
 import java.util.List;
 
 
@@ -40,12 +42,15 @@ public class ItineraryRecyclerViewAdapter extends RecyclerView.Adapter<RecyclerV
         {
             View itemView = LayoutInflater.from(parent.getContext())
                     .inflate(R.layout.itinerary_recycler_view_item_travel, parent, false);
+            itemView.setOnClickListener(clickListener);
             viewHolder = new TravelingViewHolder(itemView);
+
         }
         else if(viewType == Constants.ITINERARY_VIEW_HOTEL)
         {
             View itemView = LayoutInflater.from(parent.getContext())
                     .inflate(R.layout.itinerary_recycler_view_item_hotel, parent, false);
+            itemView.setOnClickListener(clickListener);
             viewHolder = new HotelViewHolder(itemView);
         }
 
@@ -56,11 +61,14 @@ public class ItineraryRecyclerViewAdapter extends RecyclerView.Adapter<RecyclerV
     public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
 
         Itinerary itinerary = listOfItinerary.get(position);
+
+        holder.itemView.setTag(itinerary);
+
         if(holder.getItemViewType() ==  Constants.ITINERARY_VIEW_TRAVEL )
         {
             TravelingViewHolder customViewHolder = (TravelingViewHolder) holder;
             customViewHolder.txtViewProvider.setText(itinerary.getType() +" : "+itinerary.getProvider());
-            customViewHolder.textViewDate.setText(activityContext.getString(R.string.itinerary_date)+": "+itinerary.getDate());
+            customViewHolder.textViewDate.setText(activityContext.getString(R.string.itinerary_date)+": "+ Util.formatTime(itinerary.getDate()));
             customViewHolder.txtViewSourcePointCode.setText(itinerary.getSourceAirportCode());
             customViewHolder.txtViewSourcePointName.setText(itinerary.getSource());
             customViewHolder.txtViewDestinationPointCode.setText(itinerary.getDestinationAirportCode());
@@ -92,8 +100,9 @@ public class ItineraryRecyclerViewAdapter extends RecyclerView.Adapter<RecyclerV
         {
             HotelViewHolder customViewHolder = (HotelViewHolder) holder;
             customViewHolder.txtViewHotelName.setText("Hotel: "+itinerary.getHotelName());
-            customViewHolder.txtViewCheckInValue.setText(itinerary.getCheckInDate());
-            customViewHolder.txtViewCheckOutValue.setText(itinerary.getCheckOutDate());
+            customViewHolder.txtViewCheckInValue.setText(Util.formatTime(itinerary.getCheckInDate()));
+            customViewHolder.txtViewCheckOutValue.setText(Util.formatTime(itinerary.getCheckOutDate()));
+
             customViewHolder.txtViewPersonName.setText(itinerary.getContactPersonName());
             customViewHolder.txtViewPersonNumber.setText(itinerary.getContactPersonPhoneNumber());
             customViewHolder.txtViewAddress.setText("Address: "+itinerary.getAddress());
@@ -189,6 +198,7 @@ public class ItineraryRecyclerViewAdapter extends RecyclerView.Adapter<RecyclerV
         @Override
         public void onClick(View v)
         {
+            Itinerary itinerary = (Itinerary) v.getTag();
         }
     }
 }

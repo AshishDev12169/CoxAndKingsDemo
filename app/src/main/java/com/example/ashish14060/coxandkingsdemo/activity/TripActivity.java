@@ -9,6 +9,7 @@ import android.support.v7.widget.RecyclerView;
 import com.example.ashish14060.coxandkingsdemo.R;
 import com.example.ashish14060.coxandkingsdemo.adapter.TripRecyclerViewAdapter;
 import com.example.ashish14060.coxandkingsdemo.databinding.TripLayoutBinding;
+import com.example.ashish14060.coxandkingsdemo.manager.WebServiceManager;
 import com.example.ashish14060.coxandkingsdemo.util.Constants;
 import com.example.ashish14060.coxandkingsdemo.util.JsonParser;
 import com.example.ashish14060.coxandkingsdemo.web_model.GetTripResponse;
@@ -16,11 +17,15 @@ import com.example.ashish14060.coxandkingsdemo.web_model.Trip;
 import java.util.ArrayList;
 import java.util.List;
 
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+
 /**
  * Created by Ashish14060 on 5/28/2018.
  */
 
-public class TripActivity extends BaseActivity
+public class TripActivity extends BaseActivity implements WebApiListener
 {
     private TripLayoutBinding tripLayoutBinding;
 
@@ -47,10 +52,11 @@ public class TripActivity extends BaseActivity
 
     private void getUserTripInfo()
     {
-        GetTripResponse getTripResponse = (GetTripResponse) JsonParser.parse(Constants.USER_TRIP_INFORMATION);
-        List<Trip> listOfUserTrip = getTripResponse.getTrips();
-
-        updateTripRecyclerView(listOfUserTrip);
+        WebServiceManager.getListOfUserTrip(this);
+//        GetTripResponse getTripResponse = (GetTripResponse) JsonParser.parse(Constants.USER_TRIP_INFORMATION);
+//        List<Trip> listOfUserTrip = getTripResponse.getTrips();
+//
+//        updateTripRecyclerView(listOfUserTrip);
     }
 
     private void updateTripRecyclerView(List<Trip> listOfTrips)
@@ -61,5 +67,20 @@ public class TripActivity extends BaseActivity
             this.listOfTrips.addAll(listOfTrips);
             tripRecyclerViewAdapter.notifyDataSetChanged();
         }
+    }
+
+
+    @Override
+    public void onSuccess(Response response)
+    {
+        GetTripResponse getTripResponse = (GetTripResponse) response.body();
+        List<Trip> listOfUserTrip = getTripResponse.getTrips();
+
+        updateTripRecyclerView(listOfUserTrip);
+    }
+
+    @Override
+    public void onFail(Throwable throwable) {
+
     }
 }
