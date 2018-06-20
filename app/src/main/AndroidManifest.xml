@@ -10,7 +10,7 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activity.MainActivity1">
+        <activity android:name=".activity.LoginRegisterActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -20,7 +20,10 @@
 
         <activity android:name=".activity.TripActivity"/>
         <activity android:name=".activity.ItineraryActivity"/>
-
+        <activity android:name=".activity.ItineraryDetailActivity"/>
+        <activity android:name=".activity.LoginActivity"/>
+        <activity android:name=".activity.MainActivity1"/>
+        <activity android:name=".activity.RegisterActivity"/>
 
     </application>
 

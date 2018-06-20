@@ -14,8 +14,8 @@ public class ItineraryDetailActivity extends BaseActivity
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.itinerary_detail_layout);
 
+        setContentView(R.layout.itinerary_detail_layout);
         setTitle("Flight Status");
     }
 }

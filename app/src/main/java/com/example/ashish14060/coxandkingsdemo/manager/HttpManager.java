@@ -20,9 +20,13 @@ public class HttpManager
             @Override
             public void run() {
                 try {
-                    HttpURLConnection conn = (HttpURLConnection) (new URL("http://172.16.234.53:90/api/Trip/GetTrip/10"))
+                    HttpURLConnection conn = (HttpURLConnection) (new URL("http://172.16.234.53:9080/token?grant_type=password&username=ashish9@gmail.com&password=Test@123456"))
                             .openConnection();
-                    conn.setUseCaches(false);
+                    conn.setRequestMethod("POST");
+                    conn.setDoInput(true);
+                    conn.setDoOutput(true);
+                    conn.setRequestProperty("Content-Type", "application/x-www-form-urlencoded");
+                    //conn.setUseCaches(false);
                     conn.connect();
                     int status = conn.getResponseCode();
 

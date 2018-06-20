@@ -81,6 +81,6 @@ public class TripActivity extends BaseActivity implements WebApiListener
 
     @Override
     public void onFail(Throwable throwable) {
-
+        handleException(throwable);
     }
 }

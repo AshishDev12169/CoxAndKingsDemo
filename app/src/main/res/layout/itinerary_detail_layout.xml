@@ -1,251 +1,263 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:padding="@dimen/padding_8dp">
 
-    <LinearLayout
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:fillViewport="true"
+        android:orientation="vertical"
+        android:padding="@dimen/padding_8dp">
 
-        <android.support.v7.widget.CardView
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
-            <LinearLayout
+            <android.support.v7.widget.CardView
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
-
-                <TextView
-                    style="@style/TextStyleBold"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="#a6ccff"
-                    android:padding="@dimen/padding_8dp"
-                    android:text="Flight Information" />
+                android:layout_height="wrap_content">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="@color/detail_page_bg"
-                    android:gravity="center_vertical"
-                    android:padding="@dimen/margin_8dp">
+                    android:orientation="vertical">
 
-                    <ImageView
-                        android:layout_width="36dp"
-                        android:layout_height="36dp"
-                        android:src="@drawable/icon_flight" />
+                    <TextView
+                        style="@style/TextStyleBold"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/blue"
+                        android:padding="@dimen/padding_8dp"
+                        android:text="@string/itinerary_detail" />
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="@dimen/padding_8dp"
-                        android:layout_marginStart="@dimen/padding_8dp"
-                        android:orientation="vertical">
+                        android:background="@color/detail_page_bg"
+                        android:gravity="center_vertical"
+                        android:padding="@dimen/margin_8dp">
 
-
-                        <TextView
-                            style="@style/TextStyle"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="Indigo Blue" />
-
-                        <TextView
-                            style="@style/TextStyle"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="@dimen/margin_4dp"
-                            android:text="Status: On Time" />
-
+                        <ImageView
+                            android:layout_width="@dimen/width"
+                            android:layout_height="@dimen/height"
+                            android:src="@drawable/icon_flight" />
 
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="@dimen/margin_8dp"
-                            android:orientation="horizontal">
+                            android:layout_marginLeft="@dimen/padding_8dp"
+                            android:layout_marginStart="@dimen/padding_8dp"
+                            android:orientation="vertical">
 
-                            <LinearLayout
-                                android:layout_width="wrap_content"
+
+                            <TextView
+                                style="@style/TextStyle"
+                                android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:orientation="vertical">
+                                android:text="Indigo Blue" />
 
-                                <TextView
-                                    android:id="@+id/txtViewSourcePointCode"
-                                    style="@style/TextStyleBold"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:text="XXXXOM" />
-
-                                <TextView
-                                    android:id="@+id/txtViewSourcePointName"
-                                    style="@style/TextStyle"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:text="XXXXh" />
-
-                            </LinearLayout>
-
-                            <LinearLayout
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
-                                android:gravity="center_vertical"
-                                android:orientation="vertical">
-
-                                <ImageView
-                                    android:layout_width="match_parent"
-                                    android:layout_height="20dp"
-                                    android:layout_gravity="center_vertical"
-                                    android:src="@drawable/images" />
-
-                            </LinearLayout>
-
-                            <LinearLayout
-                                android:layout_width="wrap_content"
+                            <TextView
+                                android:id="@+id/textViewPnr"
+                                style="@style/TextStyle"
+                                android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:orientation="vertical">
+                                android:layout_marginTop="@dimen/margin_4dp"
+                                android:text="PNR: X89n491"
+                                android:visibility="gone" />
 
-                                <TextView
-                                    android:id="@+id/txtViewDestinationPointCode"
-                                    style="@style/TextStyleBold"
+                            <TextView
+                                style="@style/TextStyle"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/margin_4dp"
+                                android:text="Status: On Time" />
+
+                            <!--Airport Information-->
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/margin_8dp"
+                                android:orientation="horizontal">
+
+                                <LinearLayout
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text="XX678" />
+                                    android:orientation="vertical">
 
-                                <TextView
-                                    android:id="@+id/txtViewDestinationPointName"
-                                    style="@style/TextStyle"
+                                    <TextView
+                                        android:id="@+id/txtViewSourcePointCode"
+                                        style="@style/TextStyleBold"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="XXXXOM" />
+
+                                    <TextView
+                                        android:id="@+id/txtViewSourcePointName"
+                                        style="@style/TextStyle"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="XXXXh" />
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:gravity="center_vertical"
+                                    android:orientation="vertical">
+
+                                    <ImageView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="20dp"
+                                        android:layout_gravity="center_vertical"
+                                        android:src="@drawable/images" />
+
+                                </LinearLayout>
+
+                                <LinearLayout
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text="XX678" />
+                                    android:orientation="vertical">
 
+                                    <TextView
+                                        android:id="@+id/txtViewDestinationPointCode"
+                                        style="@style/TextStyleBold"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="XX678" />
+
+                                    <TextView
+                                        android:id="@+id/txtViewDestinationPointName"
+                                        style="@style/TextStyle"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="XX678" />
+
+                                </LinearLayout>
                             </LinearLayout>
                         </LinearLayout>
                     </LinearLayout>
                 </LinearLayout>
-            </LinearLayout>
-        </android.support.v7.widget.CardView>
+            </android.support.v7.widget.CardView>
 
-        <!--Origin Airport Information-->
-        <android.support.v7.widget.CardView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/padding_16dp">
 
-            <LinearLayout
+
+            <!--Origin Airport Information-->
+            <android.support.v7.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
-
-                <TextView
-                    style="@style/TextStyleBold"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="#a6ccff"
-                    android:padding="@dimen/padding_8dp"
-                    android:text="Origin" />
-
+                android:layout_marginTop="@dimen/padding_16dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="#EAEDED"
-                    android:orientation="vertical"
-                    android:padding="@dimen/margin_8dp">
+                    android:orientation="vertical">
 
                     <TextView
-                        style="@style/TextStyle"
-                        android:layout_width="wrap_content"
+                        style="@style/TextStyleBold"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Airport: Delhi" />
+                        android:background="@color/blue"
+                        android:padding="@dimen/padding_8dp"
+                        android:text="Origin" />
 
-                    <TextView
-                        style="@style/TextStyle"
-                        android:layout_width="wrap_content"
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/margin_4dp"
-                        android:text="Departed: 1 Augest 2018" />
+                        android:background="#EAEDED"
+                        android:orientation="vertical"
+                        android:padding="@dimen/margin_8dp">
 
-                    <TextView
-                        style="@style/TextStyle"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/margin_4dp"
-                        android:text="Terminal: T6" />
+                        <TextView
+                            style="@style/TextStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Airport: Delhi" />
 
-                    <TextView
-                        style="@style/TextStyle"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/margin_4dp"
-                        android:text="Gate: G6" />
+                        <TextView
+                            style="@style/TextStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/margin_4dp"
+                            android:text="Departed: 1 Augest 2018" />
 
+                        <TextView
+                            style="@style/TextStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/margin_4dp"
+                            android:text="Terminal: T6" />
 
+                        <TextView
+                            style="@style/TextStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/margin_4dp"
+                            android:text="Gate: G6" />
+                    </LinearLayout>
                 </LinearLayout>
+            </android.support.v7.widget.CardView>
 
-
-            </LinearLayout>
-        </android.support.v7.widget.CardView>
-
-
-        <android.support.v7.widget.CardView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/padding_16dp">
-
-            <LinearLayout
+            <!--Destination information-->
+            <android.support.v7.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
-
-                <TextView
-                    style="@style/TextStyleBold"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="#a6ccff"
-                    android:padding="@dimen/padding_8dp"
-                    android:text="Destination" />
-
+                android:layout_marginTop="@dimen/padding_16dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="#EAEDED"
-                    android:orientation="vertical"
-                    android:padding="@dimen/padding_8dp">
+                    android:orientation="vertical">
 
                     <TextView
-                        style="@style/TextStyle"
-                        android:layout_width="wrap_content"
+                        style="@style/TextStyleBold"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Airport: Dubai" />
+                        android:background="#a6ccff"
+                        android:padding="@dimen/padding_8dp"
+                        android:text="Destination" />
 
-                    <TextView
-                        style="@style/TextStyle"
-                        android:layout_width="wrap_content"
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/margin_4dp"
-                        android:text="Arrives:  1 Augest 2018" />
+                        android:background="#EAEDED"
+                        android:orientation="vertical"
+                        android:padding="@dimen/padding_8dp">
 
-                    <TextView
-                        style="@style/TextStyle"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/margin_4dp"
-                        android:text="Terminal: K9" />
+                        <TextView
+                            style="@style/TextStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Airport: Dubai" />
 
-                    <TextView
-                        style="@style/TextStyle"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/margin_4dp"
-                        android:text="Gate: G2" />
+                        <TextView
+                            style="@style/TextStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/margin_4dp"
+                            android:text="Arrives:  1 Augest 2018" />
 
+                        <TextView
+                            style="@style/TextStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/margin_4dp"
+                            android:text="Terminal: K9" />
+
+                        <TextView
+                            style="@style/TextStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/margin_4dp"
+                            android:text="Gate: G2" />
+
+                    </LinearLayout>
                 </LinearLayout>
-            </LinearLayout>
-        </android.support.v7.widget.CardView>
-    </LinearLayout>
-</ScrollView>
+            </android.support.v7.widget.CardView>
+        </LinearLayout>
+    </ScrollView>
+</layout>

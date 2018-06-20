@@ -17,4 +17,13 @@ public class Constants
 
     public static final int ITINERARY_VIEW_TRAVEL = 1;
     public static final int ITINERARY_VIEW_HOTEL = 2;
+
+
+    public static final String DATE_FORMAT_SEVER = "yyyy-MM-dd'T'HH:mm:ss";
+    public static final String DATE_FORMAT_dd_MM_yyyy = "dd-MM-yyyy";
+
+
+    //API Constants
+    public static final String BASE_URL = "http://172.16.234.53:9080/";
+
 }

@@ -33,6 +33,12 @@
     <string name="trip_trip_information">Trip Information</string>
 
 
+    <string name="login_register_login">Login</string>
+    <string name="login_register_register">Register</string>
 
+
+
+
+    <string name="itinerary_detail">Flight Information</string>
 
 </resources>
